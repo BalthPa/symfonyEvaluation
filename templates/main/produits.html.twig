@@ -6,23 +6,29 @@
    <div class="container">
        <div class="jumbotron">
            <h2>Liste des produits</h2>
-                {% for produit in produits %}
-                <div class="card" style="width: 18rem;">
-                    {% if produit.photo is not null %}
-                        <img src="{{ asset('assets/images/' ~ produit.photo) }}" class="card-img-top" alt="Card-image tap"/>
-                    {% endif %}
-                   <div class="card-body">
-                       <h5 class="card-title">{{ produit.nom }}</h5>
-                   </div>
-                   <ul class="list-group list-group-flush">
-                       <li class="list-group-item">Quantité :{{ produit.quantite }}</li>
-                       <li class="list-group-item">Prix :{{ produit.prix }}</li>
-                   </ul>
-                   <div class="card-body">
-                       <a href="ficheProduit/{{ produit.id }}" class="card-link">Voir plus</a>
-                   </div>
-                </div>
-                {% endfor %}
+           <div class="jumbotron">
+               <table class="table table-dark">
+
+                   <thead>
+                   <tr>
+                       <th scope="col">Photo</th>
+                       <th scope="col">Nom</th>
+                       <th scope="col">Quantité</th>
+                       <th scope="col">Prix</th>
+                   </tr>
+                   </thead>
+                   <tbody>
+                   {% for produit in produits %}
+                       <tr>
+                           <td><img src="{{ asset('assets/images/' ~ produit.photo) }}" class="card-img-top" alt="Card-image tap" style="width: 5rem;"/></td>
+                           <td><a href="ficheProduit/{{ produit.id }}" class="card-link">{{produit.nom}}</a></td>
+                           <td>{{produit.quantite}} €</td>
+                           <td>{{ produit.prix }}</td>
+                       </tr>
+                   {% endfor %}
+                   </tbody>
+               </table>
+           </div>
        </div>
 
        <div class="jumbotron">

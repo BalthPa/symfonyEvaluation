@@ -131,4 +131,14 @@ class Produit
 
         return $this;
     }
+
+    /**
+     * @ORM\PostRemove
+     */
+    public function deleteFile(){
+        if(file_exists(__DIR__ . '/../../public/assets/images/'. $this->photo)){
+            unlink(__DIR__ . '/../../public/assets/images/'. $this->photo);
+        }
+        return true;
+    }
 }

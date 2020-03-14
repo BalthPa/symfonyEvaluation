@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Fiche Produit{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="jumbotron">
+            <h2>{{ produit.nom }}</h2>
+            {% if produit.photo is not null %}
+                <img src="{{ asset('assets/images/' ~ produit.photo) }}" style="height:18rem"/>
+            {% endif %}
+            <p>Prix : {{ produit.prix }} €</p>
+            <p>Il en reste {{ produit.quantite }} en stock</p>
+
+            <h3>Ajouter au panier</h3>
+            {{ form(formPanier) }}
+
+            <a href="{{path('removeProduit', {id: produit.id})}}"><button class="btn btn-danger">Supprimer</button></a>
+        </div>
+
+
+
+    </div>
+{% endblock %}
