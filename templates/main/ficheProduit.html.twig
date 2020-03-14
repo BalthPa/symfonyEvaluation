@@ -9,13 +9,13 @@
             {% if produit.photo is not null %}
                 <img src="{{ asset('assets/images/' ~ produit.photo) }}" style="height:18rem"/>
             {% endif %}
-            <p>Prix : {{ produit.prix }} €</p>
-            <p>Il en reste {{ produit.quantite }} en stock</p>
+            <p>{% trans %}Prix{% endtrans %} : {{ produit.prix }} €</p>
+            <p>{% trans %}Stock{% endtrans %} : {{ produit.quantite }}</p>
 
-            <h3>Ajouter au panier</h3>
+            <h3>{% trans %}Ajouter au panier{% endtrans %}</h3>
             {{ form(formPanier) }}
 
-            <a href="{{path('removeProduit', {id: produit.id})}}"><button class="btn btn-danger">Supprimer</button></a>
+            <a href="{{path('removeProduit', {id: produit.id})}}"><button class="btn btn-danger">{% trans %}Supprimer{% endtrans %}</button></a>
         </div>
 
 

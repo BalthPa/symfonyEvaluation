@@ -8,8 +8,8 @@
     </head>
     <body>
     <nav class="nav">
-        <a class="nav-link active" href="{{ path('index') }}">Accueil</a>
-        <a class="nav-link" href="{{ path('produits') }}">Produits</a>
+        <a class="nav-link active" href="{{ path('index') }}">{% trans %}Accueil{% endtrans %}</a>
+        <a class="nav-link" href="{{ path('produits') }}">{% trans %}Produits{% endtrans %}</a>
     </nav>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}

@@ -5,16 +5,16 @@
 {% block body %}
    <div class="container">
        <div class="jumbotron">
-           <h2>Liste des produits</h2>
+           <h2>{% trans %}Liste des produits{% endtrans %}</h2>
            <div class="jumbotron">
                <table class="table table-dark">
 
                    <thead>
                    <tr>
                        <th scope="col">Photo</th>
-                       <th scope="col">Nom</th>
-                       <th scope="col">Quantité</th>
-                       <th scope="col">Prix</th>
+                       <th scope="col">{% trans %}Nom{% endtrans %}</th>
+                       <th scope="col">{% trans %}Quantité{% endtrans %}</th>
+                       <th scope="col">{% trans %}Prix{% endtrans %}</th>
                    </tr>
                    </thead>
                    <tbody>
@@ -32,7 +32,7 @@
        </div>
 
        <div class="jumbotron">
-           <h2>Ajouter un produit</h2>
+           <h2>{% trans %}Ajouter un produit{% endtrans %}</h2>
            {{ form(formProduits) }}
        </div>
    </div>
